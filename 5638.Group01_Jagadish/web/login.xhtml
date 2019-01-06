@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+            <title>Login</title>
+            <meta http-equiv="cache-control" content="no-cache" />
+            <meta http-equiv="pragma" content="no-cache" />
+            <meta http-equiv="refresh"/>
+            
+            <h:outputStylesheet library="css" name="style.css" />
+    </h:head>
+
+    <style>
+        .background{
+            background-image:url('images/background.jpg'); 
+        }    
+    </style>
+
+    
+    <h:body class ="background">
+            <!--Dashboard-->
+            <div>
+                <p>
+                    <p style=" color: green">
+                        Today: #{DateTime.GetDate()}  #{DateTime.GetDateTime()}
+                    </p>
+             
+                    <div>
+                        <h:link outcome="index.xhtml"> Welcome |</h:link>
+                        
+                        <h:link outcome="register.xhtml"> Register |</h:link>
+                        
+                        <h:link outcome="about.xhtml"> About</h:link>
+                    </div>
+                </p>
+            </div>
+            
+            <div id="" />
+            <!--Dashboard-->
+            
+            <h:form>
+            
+                <div id = "container">
+                    
+                    <div class=" title1">Login</div>
+
+                    
+                        User ID: <h:inputText id="UserId" class="inputtext" required="true" maxlength="10" 
+                                              requiredMessage="User Id cannot be empty" style=" margin-left: 18px;"
+                                      title ="User Id" value ="#{System.userId}"></h:inputText>
+                    <br/>
+                    <br/>
+            
+                    
+                        Password: <h:inputSecret id="Password" class="inputtext" required="true" 
+                                    maxlength="20" requiredMessage="Password cannot be empty" style=" margin-left: 10px;" 
+                                       title ="Password" value ="#{System.password}"></h:inputSecret>
+                    
+  
+                    <p>
+                        <h:commandButton class ="button1" value ="Login" action="#{System.Login()}"> </h:commandButton>
+                    </p>
+            
+                    <p>
+                        <h:outputText value="#{System.message}"></h:outputText>
+                    </p>
+                    
+                </div>
+
+        </h:form>
+    </h:body>
+</html>

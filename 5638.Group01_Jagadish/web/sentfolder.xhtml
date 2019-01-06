@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Display sent folder</title>
+        
+        <h:outputStylesheet library="css" name="style.css" />
+        
+    </h:head>
+       
+        <style>
+        .background{
+            background-image:url('images/background.jpg'); 
+        }
+        </style>
+    
+    <h:body class="background"> 
+        <h:form>
+        <!--Dashboard-->
+        <div class ="dashboard">
+            <p>
+                Today: #{DateTime.GetDate()}  #{DateTime.GetDateTime()}<br/>
+            </p>
+            
+            <p>
+                Hello: #{User.ConvertAcctIDtoName(System.getUserId())}
+                
+                <h:commandButton id="logout" class="logoutbt" value ="Log out" action="#{System.Logout()}" > </h:commandButton>
+            </p>
+        </div>
+                    
+        <div class = "mainContainer">    
+        <div>
+                
+                    <div>
+                        <h:commandButton id="inbox" class="button1" value ="Inbox" action="#{System.Inbox()}"> </h:commandButton>
+                        
+                        <h:commandButton id="compose" class="button1" value ="Compose" action="#{System.Compose()}"> </h:commandButton>
+
+                        <h:commandButton id="sentfolder" class="button1" value ="Sent Folder" action="#{System.DisplaySentFolder()}" > </h:commandButton>
+                        
+                        <h:commandButton id="trask" class="button1" value ="Trash" action="#{System.DisplayTrashFolder()}" > </h:commandButton>
+                    
+                    </div>
+        </div>
+            <!--Dashboard-->
+            
+            <div class="title1">Sent folder</div>
+                
+                <p>#{System.LoadSendingData()}</p>
+            
+                <p>Total: #{System.getEmails.size()}</p>
+            
+                <h:dataTable id="table" rows="#{System.getEmails.size()}" value ="#{System.getEmails}" var="email">
+                    <h:column>
+                        [To:]<h:commandLink value="#{User.ConvertAcctIDtoName(email.receiverId)}"  action ="#{System.getEmailByID2(email.emailId)}"></h:commandLink>
+                        :
+                        <h:commandLink value="#{System.TitleSubString(email.title)}" action="#{System.getEmailByID2(email.emailId)}"></h:commandLink>                     
+                        ,
+                        <h:commandLink value="#{email.date}" action="#{System.getEmailByID2(email.emailId)}"></h:commandLink>
+                        
+                        <h:commandLink value="#{System.IsRead2(email.isRead)}" action="#{System.getEmailByID2(email.emailId)}"></h:commandLink>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

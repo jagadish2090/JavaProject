@@ -1,0 +1,127 @@
+
+        .background{
+           
+            background-image:url('images/background.jpg'); 
+        }
+        
+        
+        
+        #container{
+            position: absolute;
+            border: solid 3px #73AD21;
+            width: 250px;
+            left:  35%;
+            top: 30%;
+            text-align: center;
+        }
+        
+        .loginForm{
+            position: absolute;
+            left: 35%;
+            top: 30%;
+            width: 300px;
+            border:  3px solid #73AD21;
+        }
+        
+        
+        
+        #NavLine{
+            border: solid 3px #73AD21;
+            background-color: lightgrey;
+            width: 300px;
+        }
+        
+        #projectTitle{
+            position: absolute;
+            top: 40%;
+            left: 25%;
+            color: green;
+            font-size: xx-large;
+        }
+        
+        #div1{
+            margin-left: 20px;
+        }
+        
+        #registerContainer{
+            position: absolute;
+            border: solid 3px #73AD21;
+            width: 350px;
+            left:  35%;
+            top: 25%;
+            text-align: center;
+        }
+        
+        .inputext{
+            text-align: center;
+            
+        }
+        
+        #NavLine{
+            border: solid 3px #73AD21;
+            background-color: lightgrey;
+            width: 300px;
+        }
+        
+         #uhcl{
+            border: solid 3px #73AD21;
+            width: 220px;
+            padding: 5px;
+        }
+        
+        .font1{
+            color: green;
+            font-size: x-large;
+        }
+        
+        #borderBox{
+            position: absolute;
+            border: solid 3px #73AD21;
+            width: 250px;
+            left:  35%;
+            top: 30%;
+            text-align: center;
+        }
+        
+        .mainContainer{
+            position: absolute;
+            border: solid 3px #73AD21;
+            width: 800px;
+            height: 500px;
+            left:  20%;
+            top: 20%;    
+        }
+        
+        .dashboard{
+            position: static;
+            border: solid 3px #73AD21;
+            width: 250px;
+            height: 85px;
+            color: green;
+            font-family: 'serif';
+            
+            
+        }
+        
+        .logoutbt{
+            position: relative;
+            left: 28px;
+            color: red;
+            font-weight: bold;
+        }
+        
+        .button1{
+            position: static;
+            font-weight: bold;
+            color: green;
+            left: 10px;
+            
+        }
+        
+        .title1{
+            color: green;
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+        
+     

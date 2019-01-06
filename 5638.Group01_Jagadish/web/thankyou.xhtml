@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+            <title>Thank you</title>
+            <meta http-equiv="cache-control" content="no-cache" />
+            <meta http-equiv="pragma" content="no-cache" />
+            <meta http-equiv="refresh"/>
+            
+            <h:outputStylesheet library="css" name="style.css" />
+    </h:head>
+     <style>
+        .background{
+            background-image:url('images/background.jpg'); 
+        }
+    </style>
+    <h:body class="background">
+            <!--Dashboard-->
+            <div>
+                <p>
+                    <!--User; Date-->
+                    <p style=" color: green">
+                        Today: #{DateTime.GetDate()}  #{DateTime.GetDateTime()}
+                    </p>
+             
+                    <div>
+                        <h:link outcome="index.xhtml"> Welcome |</h:link>
+                        
+                        <h:link outcome="register.xhtml"> Register |</h:link>
+                        
+                        <h:link outcome="login.xhtml"> Login </h:link>
+                    </div>
+                </p>
+            </div>
+            <!--Dashboard-->
+            <h:form>
+                <h1 class=" title1" >Thank you</h1>
+            
+            <div id="projectTitle">
+                <pre>
+                    <b>
+                    Course: 5638 - Advanced Java Programming
+                    Professor: Dr. Jian Lin
+                    Group: 01
+                    </b>
+                    <u>Members:</u>
+                
+                    01: Hung Nguyen (Leader) 
+                    02: Ankita Dubey  
+                    03: Jagadish Kumar Addepalli 
+                </pre>
+            </div>
+        </h:form>
+    </h:body>
+</html>

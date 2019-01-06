@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+            <title>Compose</title>
+            <meta http-equiv="cache-control" content="no-cache" />
+            <meta http-equiv="pragma" content="no-cache" />
+            <meta http-equiv="refresh"/>
+            <h:outputStylesheet library="css" name="style.css" />
+    </h:head>
+    <style>
+        .background{
+            background-image:url('images/background.jpg'); 
+        }
+        
+    </style>
+    <h:body class="background">
+        <h:form>
+            <!--Dashboard-->
+            <div class="dashboard">
+                    <p>
+                        Today: #{DateTime.GetDate()}  #{DateTime.GetDateTime()}<br/>
+                    </p>
+            
+                    <p>
+                        Hello: #{User.ConvertAcctIDtoName(System.getUserId())}
+                        
+                        <h:commandButton id="logout" class="logoutbt" value ="Log out" action="#{System.Logout()}" > </h:commandButton>
+                    </p>
+            </div>
+                    
+            <div class="mainContainer">
+                <div>
+                    <h:commandButton id="inbox" class="button1" value ="Inbox" action="#{System.Inbox()}"> </h:commandButton>
+                        
+                        <h:commandButton id="compose" class="button1" value ="Compose" action="#{System.Compose()}"> </h:commandButton>
+
+                        <h:commandButton id="sentfolder" class="button1" value ="Sent Folder" action="#{System.DisplaySentFolder()}" > </h:commandButton>
+                        
+                        <h:commandButton id="trask" class="button1" value ="Trash" action="#{System.DisplayTrashFolder()}" > </h:commandButton>
+                </div>
+                    
+            <!--Dashboard-->
+            <div class="title1">Compose</div>
+            
+    <pre>
+    Today:#{DateTime.GetDate()}
+    From: #{User.ConvertAcctIDtoName(System.userId)}
+            
+    To:   <h:inputText id="receiver" required="false" maxlength="20" requiredMessage="Enter receiver's email" title ="To" value ="#{System.receiver}"></h:inputText>        
+    Title:<h:inputText id="title" style="width: 400px;" required="false" maxlength="200" title ="Title" value ="#{System.title}" ></h:inputText>
+    Content: 
+          <h:inputTextarea id="content" style="width: 650px; height: 170px;" required = "false" requiredMessage="Enter email content" title ="Content" value ="#{System.content}"></h:inputTextarea>
+    Notification:<h:selectBooleanCheckbox id="noti" value = "#{System.notification}"></h:selectBooleanCheckbox>
+    </pre>                                 
+
+            <p>
+                
+               
+                <br/>
+                
+                <h:commandButton id="send" class="button1" value ="Send" action="#{System.WriteEmail()}"> </h:commandButton>
+                | 
+                <h:commandButton id="cancel" class="button1" value ="Discard" action="#{System.Inbox()}"> </h:commandButton> 
+            </p>
+            
+            <p>
+                <h:outputText value="#{System.message}"></h:outputText>
+            </p>
+        </div>
+        </h:form>
+    </h:body>
+</html>

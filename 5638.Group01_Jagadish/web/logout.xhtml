@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+            <title>Log out</title>
+            <meta http-equiv="cache-control" content="no-cache" />
+            <meta http-equiv="pragma" content="no-cache" />
+            <meta http-equiv="refresh"/>
+    </h:head>
+    <h:body>
+        <p>Log out</p>
+        <h:form>
+            <!--Dashboard-->
+            <div>
+                <p>
+                    <!--User; Date-->
+                    <p>
+                        System: #{DateTime.GetDate()}  #{DateTime.GetDateTime()}<br/>
+                    </p>
+            
+                    <div>
+                        <h:commandButton id="mainpage" value ="Main Page" action="mainpage.xhtml"> </h:commandButton>
+                        
+                        <h:commandButton id="login" value ="Login" action="login.xhtml"> </h:commandButton>
+                    </div>
+                </p>
+            </div>
+            <!--Dashboard-->
+            <h3>Good bye !</h3>
+        </h:form>
+    </h:body>
+</html>

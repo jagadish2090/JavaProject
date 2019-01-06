@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+            <title>Registration</title>
+            <meta http-equiv="cache-control" content="no-cache" />
+            <meta http-equiv="pragma" content="no-cache" />
+            <meta http-equiv="refresh"/>
+            <h:outputStylesheet library="css" name="style.css" />
+            
+    </h:head>
+    <style>
+        .background{
+            background-image:url('images/background.jpg'); 
+        }
+    </style>
+    <h:body class="background">
+        <!--Dashboard-->
+            <div>
+                <p>
+                    <!--User; Date-->
+                    <p style=" color: green">
+                        Today: #{DateTime.GetDate()}  #{DateTime.GetDateTime()}
+                    </p>
+             
+                    <div>
+                        <h:link outcome="index.xhtml"> Welcome |</h:link>
+                        
+                        <h:link outcome="login.xhtml"> Login |</h:link>
+                        
+                        <h:link outcome="about.xhtml"> About</h:link>
+                        
+                    </div>
+                </p>
+            </div>
+            <!--Dashboard-->
+        <h:form>
+        <div id="container">
+            
+            <div class=" title1" style=" text-align: center;">
+                Registration
+            </div>
+                
+            <p>
+                First name: <h:inputText id="FirstName"  class="inputext" required="true" maxlength="20" requiredMessage="First name cannot be empty" 
+                                         title="First name" value="#{User.firstName}"></h:inputText>
+            </p>
+            
+            <p>
+                Last name: <h:inputText id="LastName" class="inputext" required="true" maxlength="20" requiredMessage="Last name cannot be empty"
+                                        title ="Last name" value ="#{User.lastName}"></h:inputText>
+            </p>
+            
+            <p>
+                User ID: <h:inputText id="UserId" class="inputext" required="true" maxlength="20" requiredMessage="User Id cannot be empty"
+                                      title ="User Id" value ="#{User.userId}"></h:inputText>
+            </p>
+            
+            <p>
+                Password: <h:inputSecret id="Password1" class="inputext" required="true" maxlength="20" requiredMessage="Password cannot be empty"
+                                       title ="Password" value ="#{User.password1}" />
+            </p>
+            
+            <p>
+                Re-retype: <h:inputSecret id="Password2" class="inputext" required="true" maxlength="20" requiredMessage="Password cannot be empty"
+                                                  title ="Re-enter password" value ="#{User.password2}"> </h:inputSecret>
+            </p>
+  
+            <p>
+                <h:commandButton id="Submit" class="button1" value ="Submit" action="#{User.Register()}" />
+            </p>
+            
+            <p>
+                <h:outputText value="#{User.message}"></h:outputText>
+            </p>
+            
+        </div>    
+        </h:form>
+    </h:body>
+</html>

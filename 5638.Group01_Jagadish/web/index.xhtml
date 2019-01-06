@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>5638.Group01_Hung_Antika_Addeppalli</title>
+        <h:outputStylesheet library="css" name="style.css" />
+    </h:head>
+    <style>
+        .background{
+            background-image:url('images/background.jpg'); 
+        }
+ 
+    </style>
+    <h:body class="background">
+        <div>    
+            <h:graphicImage   url="images/uhcl_logo.png" style="width: 300px; float: right;" ></h:graphicImage>
+        </div>
+        
+        <div id="uhcl">
+            <a href= "https://blackboard.uhcl.edu/">Update View Blackboard UHCL</a>
+        </div>
+        
+        <!--Dashboard-->
+        <div style=" color: green">
+                <p>
+                    <!--User; Date-->
+                    <p>
+                        Today: #{DateTime.GetDate()}  #{DateTime.GetDateTime()}
+                    </p>
+                    
+                    <div>
+                        <h:link outcome="index.xhtml"> Welcome |</h:link>
+                        
+                        <h:link outcome="register.xhtml"> Register |</h:link>
+                        
+                        <h:link outcome="login.xhtml"> Login |</h:link>
+                        
+                        <h:link outcome="about.xhtml"> About</h:link>
+                    </div>
+                </p>
+            </div>
+            
+        <div id="" />
+                
+            <!--Dashboard-->
+        <h:form>
+            <!--
+            <p class=" title1" style=" text-align: center; font-size: xx-large;">Welcome</p>
+            -->
+            <div id="projectTitle">
+                <pre>
+                    <b>
+                    Course: 5638 - Advanced Java Programming
+                    Professor: Dr. Jian Lin
+                    Group: 01
+                    </b>
+                    <u>Members:</u>
+                
+                    01: Hung Nguyen (Leader) 
+                    02: Ankita Dubey  
+                    03: Jagadish Kumar Addepalli 
+                </pre>
+            </div>
+            
+            <!--Dashboard-->
+            <div>    
+                <h:graphicImage url="" style="width: 150px" ></h:graphicImage>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
